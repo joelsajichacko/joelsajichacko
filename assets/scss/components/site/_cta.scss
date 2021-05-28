@@ -1,0 +1,33 @@
+.site-cta {
+	@extend .slanted-top;
+}
+
+.site-cta__inner {
+	@extend .spacing-huge;
+	@extend .section;
+	@extend .section--medium;
+}
+
+.site-cta__title {
+	// Type
+	color: #fff;
+}
+
+.site-cta__txt {
+	@extend .txt-large;
+	// Type
+	color: white(0.5);
+}
+
+//---- Responsive ----//
+@media screen and (min-width: map-get($breakpoints, mobile-1) + 1) {
+	.bg-slanted + .site-cta {
+		margin-top: -#{$slanted_offset};
+	}
+}
+
+@media screen and (max-width: map-get($breakpoints, mobile-1)) {
+	.bg-slanted + .site-cta {
+		margin-top: -#{$slanted_offset-m};
+	}
+}

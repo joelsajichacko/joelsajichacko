@@ -1,0 +1,83 @@
+%txt-upper {
+	// Type
+	font-weight: map-get(map-get($font-1, weights), medium);
+	text-transform: uppercase;
+	letter-spacing: 0.063em;
+}
+
+%line-bottom {
+	&:after {
+		width: 100%;
+		max-width: 30px;
+		height: 6px;
+		display: block;
+		content: '';
+		border-radius: 1000px;
+		background: map-get($ui-colors, 1);
+	}
+}
+
+%form-field {
+	@include rem(20px);
+	width: 100%;
+	height: 70px;
+	padding: 24px;
+	display: block;
+	border-radius: $border-radius;
+	border: 2px solid map-get($ui-colors, 2_7);
+	background: map-get($ui-colors, 2_6);
+	// Type
+	font-weight: map-get(map-get($font-1, weights), light);
+	color: map-get($ui-colors, 2);
+}
+
+%accent-box {
+	border-radius: $border-radius;
+	border-top: 6px solid map-get($ui-colors, 1);
+	background: map-get($ui-colors, 2_1);
+}
+
+//---- Responsive ----//
+@media screen and (min-width: map-get($breakpoints, mobile-1) + 1) {
+	.slanted {
+		padding-top: $slanted_offset;
+		padding-bottom: $slanted_offset;
+		-webkit-clip-path: polygon(0 0, 100% #{$slanted_offset}, 100% 100%, 0 calc(100% - #{$slanted_offset}));
+		clip-path: polygon(0 0, 100% #{$slanted_offset}, 100% 100%, 0 calc(100% - #{$slanted_offset}));
+	}
+
+	.slanted-top {
+		padding-top: $slanted_offset;
+		background-color: map-get($ui-colors, 2);
+		-webkit-clip-path: polygon(0 0, 100% #{$slanted_offset}, 100% 100%, 0 100%);
+		clip-path: polygon(0 0, 100% #{$slanted_offset}, 100% 100%, 0 100%);
+	}
+
+	.slanted-bottom {
+		padding-bottom: $slanted_offset;
+		-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - #{$slanted_offset}));
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - #{$slanted_offset}));
+	}
+}
+
+@media screen and (max-width: map-get($breakpoints, mobile-1)) {
+	.slanted {
+		padding-top: $slanted_offset-m;
+		padding-bottom: $slanted_offset;
+		-webkit-clip-path: polygon(0 0, 100% #{$slanted_offset-m}, 100% 100%, 0 calc(100% - #{$slanted_offset-m}));
+		clip-path: polygon(0 0, 100% #{$slanted_offset-m}, 100% 100%, 0 calc(100% - #{$slanted_offset-m}));
+	}
+
+	.slanted-top {
+		padding-top: $slanted_offset-m;
+		background-color: map-get($ui-colors, 2);
+		-webkit-clip-path: polygon(0 0, 100% #{$slanted_offset-m}, 100% 100%, 0 100%);
+		clip-path: polygon(0 0, 100% #{$slanted_offset-m}, 100% 100%, 0 100%);
+	}
+
+	.slanted-bottom {
+		padding-bottom: $slanted_offset-m;
+		-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - #{$slanted_offset-m}));
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - #{$slanted_offset-m}));
+	}
+}

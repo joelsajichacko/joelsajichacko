@@ -1,0 +1,62 @@
+{% assign thumb_url    = project.featured_preview %}
+
+<article class="project-preview {{ project_class }}">
+	<div class="project-preview__img">
+		<figure class="overlap-img">
+			<a href="{{ project.url }}">
+				<img src="{{ thumb_url }}" alt="{{ project.title }}">
+			</a>
+		</figure>
+	</div>
+
+	<div class="project-preview__content">
+		<div class="content-styles">
+			{% if project.title %}
+				<h2>
+					<a href="{{ project.url }}">
+						{{ project.title }}
+					</a>
+				</h2>
+			{% endif %}
+
+			{% if project.excerpt %}
+				{% if project_class == 'project-preview--small' %}
+					<p>
+						{{ project.excerpt }}
+					</p>
+				{% else %}
+					<p class="txt-large">
+						{{ project.excerpt }}
+					</p>
+				{% endif %}
+			{% endif %}
+		</div>
+
+		{% if project_class != 'project-preview--small' %}
+			{% if project.usps %}
+				<div class="spacing-tiny-top">
+					<ul class="icon-list">
+						{% for usp in project.usps %}
+							<li class="icon-list__item">
+								<span class="icon-list__img">
+									{{ site.data.svgs[0].[usp.icon] }}
+								</span>
+								{{ usp.title }}
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+			{% endif %}
+		{% endif %}
+
+		{% if project_class != 'project-preview--small' %}
+			{% if project.url %}
+				<div class="spacing-tiny-top">
+					<a class="btn" href="{{ project.url }}">
+						View Details
+					</a>
+				</div>
+			{% endif %}
+		{% endif %}
+	</div>
+</article>

@@ -1,0 +1,44 @@
+{% include header.html %}
+
+<section class="section section--large spacing-huge">
+	<div class="spacing-small-bottom">
+		<h2 class="section-title">
+			Featured Project
+		</h2>
+	</div>
+
+	{% assign project = site.data.projects[0] %}
+	{% include project-preview.html %}
+</section>
+
+{% assign testimonial = site.data.testimonials[0] %}
+{% include testimonial.html %}
+
+<section class="section section--large spacing-huge">
+	<div class="spacing-small-bottom">
+		<h2 class="section-title">
+			My Services
+		</h2>
+	</div>
+
+	<div class="grid grid--tb1-2 grid--m-1">
+		{% for service in site.data.services limit: 2 %}
+			<div class="grid__col grid__col--6">
+				{% include service.html %}
+			</div>
+		{% endfor %}
+	</div>
+
+	<div class="spacing-medium-top txt-center">
+		<a class="btn" href="/services/">
+			View All Services
+		</a>
+	</div>
+</section>
+
+{% assign testimonial = site.data.testimonials[1] %}
+{% include testimonial.html %}
+
+{% include blog-preview.html %}
+
+{% include footer.html %}

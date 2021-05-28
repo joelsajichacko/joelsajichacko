@@ -1,0 +1,87 @@
+{% if page.url == '/' %}
+	{% capture page_title %}{{ site.title }} | {{ site.description }}{% endcapture %}
+{% else %}
+	{% capture page_title %}{{ page.title }} | {{ site.title }}{% endcapture %}
+{% endif %}
+
+{% if page.seo_description %}
+	{% assign seo_description = page.seo_description %}
+{% elsif page.excerpt %}
+	{% assign seo_description = page.excerpt %}
+{% else %}
+	{% assign seo_description = 'Bespoke web design and development for small and medium sized businesses. Made in Southampton, UK.' %}
+{% endif %}
+
+{% if page.style == 'dark' or page.is_post %}
+	{% assign header_class = 'site-header--dark' %}
+{% else %}
+	{% assign header_class = null %}
+{% endif %}
+<!DOCTYPE html>
+<html lang="en-GB">
+	<head>
+		<title>{{ page_title }}</title>
+
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+		<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" type="text/css" media="all">
+		<link rel="stylesheet" type="text/css" href="/assets/css/style.min.css">
+
+		<link href="/assets/img/favicon-32x32.png" rel="icon" sizes="32x32">
+		<link href="/assets/img/favicon-192x192.png" rel="icon" sizes="192x192">
+		<link href="/assets/img/favicon-297x297.png" rel="apple-touch-icon-precomposed">
+		<meta content="/assets/img/favicon-297x297.png" name="msapplication-TileImage">
+
+		<meta name="description" content="{{ seo_description }}">
+		<meta name="google-site-verification" content="bzTP6T7_iPqdsTPB1KIMbC5z7GXwvXKbcedNpY-Nz0A">
+	</head>
+	<body class="js-inactive site-scroll--inactive page-{{ page.title | slugify }}">
+		<script type="text/javascript">
+			// Class for animations
+			document.body.classList.add('animations-enabled');
+		</script>
+
+		<header class="site-header {{ header_class }}">
+			<div class="site-header__inner anim anim-down anim-fade">
+				<div class="site-header__section site-header__section--logo">
+					<a class="site-logo" href="{{ site.url }}">
+						Seb Kay
+					</a>
+				</div>
+
+				{% if site.data.menu %}
+					<div class="site-header__section site-header__section--menu">
+						<a class="toggle-menu js-toggle-menu" href="#" aria-label="Toggle Menu">
+							<span class="toggle-menu__line"></span>
+							<span class="toggle-menu__line"></span>
+							<span class="toggle-menu__line"></span>
+						</a>
+
+						<nav class="site-menu">
+							<ul class="site-menu__inner">
+								{% for menu-item in site.data.menu %}
+									{% assign menu-item-current = null %}
+									{% assign menu-item-slug    = menu-item.url %}
+
+									{% if page.url == menu-item.url or page.url contains menu-item-slug %}
+										{% assign menu-item-current = 'active' %}
+									{% endif %}
+
+									<li class="site-menu__item">
+										<a class="site-menu__link {{ menu-item-current }}" href="{{ menu-item.url }}">
+											{{ menu-item.name }}
+										</a>
+									</li>
+								{% endfor %}
+							</ul>
+						</nav>
+					</div>
+				{% endif %}
+			</div>
+		</header>
+
+		{% include banner.html %}

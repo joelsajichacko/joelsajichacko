@@ -1,0 +1,56 @@
+[
+	{
+		"title"    : "Step 1",
+		"subtitle" : "Getting Started",
+		"items" : [
+			{
+				"icon"  : "text-left",
+				"title" : "Brief",
+				"desc"  : "To get a clear picture of what you need I start every project by receiving an initial brief of what you want. Having this gives me enough context to properly provide you with a proposal and ultimately tailor my services to your project goals."
+			},
+			{
+				"icon"  : "chat",
+				"title" : "Initial Chat",
+				"desc"  : "The next step is to have a quick 15-minute call so we can properly introduce ourselves and make sure we're both on the same page. This is the perfect time to let me know anything I might need to be aware of during the project."
+			}
+
+		]
+	},
+	{
+		"title"    : "Step 2",
+		"subtitle" : "Design",
+		"items" : [
+			{
+				"icon"  : "grid",
+				"title" : "Wireframes",
+				"desc"  : "Having a good set of wireframes is the bedrock of any successful website project. This is where we hammer down the layout and general functionality while always making sure the user is the primary focus."
+			},
+			{
+				"icon"  : "pen",
+				"title" : "Designs",
+				"desc"  : "This is where I apply the paint to your website. I'll take the concepts we've agreed on in the wireframes to make them look usable, modern and clean."
+			}
+		]
+	},
+	{
+		"title"    : "Step 3",
+		"subtitle" : "Development & Launch",
+		"items" : [
+			{
+				"icon"  : "code",
+				"title" : "Code",
+				"desc"  : "When the coding begins there will generally be less communication from me as this is quite an involved process that doesn't require much feedback. This is where I take the visuals of your website and make them into something real that people can interact with."
+			},
+			{
+				"icon"  : "learn",
+				"title" : "Training",
+				"desc"  : "After the website has been coded but before it goes live I like to provide in-depth training. Going forward your website will be easily updatable by yourself so I'll take you through everything over the phone and even provide screencasts for you to keep."
+			},
+			{
+				"icon"  : "bolt",
+				"title" : "Launch",
+				"desc"  : "When it's time to launch the new site I'll take care of everything. All you'll need to do is get that Tweet ready about your shiny new website!"
+			}
+		]
+	}
+]
