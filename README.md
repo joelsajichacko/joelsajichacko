@@ -1,2 +1,2 @@
 # joelsajichacko.github.io
-Portfolio card
+Joel is working on the portfolio
