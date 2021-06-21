@@ -3769,7 +3769,7 @@ img.u-pull-left {
     font-size        : calc(var(--text-size) * 0.9447);
     line-height      : var(--vspace-0_875);
     color            : rgba(0, 0, 0, 0.75);
-    overflow-y       : auto;
+    overflow-y       : scroll;
     position         : relative;
 }
 
